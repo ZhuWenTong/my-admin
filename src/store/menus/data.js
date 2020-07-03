@@ -1,9 +1,9 @@
 const data = [{
     name: '首页',
-    path: '/home'
+    path: '/index/home'
 }, {
     name: 'Example',
-    path: '/example'
+    path: '/index/example'
 }]
 
 export default data
