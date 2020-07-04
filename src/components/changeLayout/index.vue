@@ -61,9 +61,13 @@ export default {
         }
     },
     created () {
-        let layout = JSON.parse(localStorage.getItem('layout')) || {}
+        let defaultMenu = {
+            name: '上下布局',
+            value: 'topMenu'
+        }
+        let layout = JSON.parse(localStorage.getItem('layout')) || defaultMenu
         this.currentLayout = layout
-        this.changeLayout(layout)
+        this.changeLayout(this.currentLayout)
     },
     watch: {
         dialogVisible: {

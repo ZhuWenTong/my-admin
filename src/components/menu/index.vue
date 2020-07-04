@@ -1,6 +1,6 @@
 <template>
     <el-menu :default-active="$route.path" :mode="mode" @select="handleSelect">
-        <el-menu-item :index="item.path" v-for="item in menuList" :key="item.path">{{item.name}}</el-menu-item>
+        <el-menu-item :index="item.path" v-for="item in menuData" :key="item.path">{{item.name}}</el-menu-item>
     </el-menu>
 </template>
 <script>
@@ -12,15 +12,28 @@ export default {
             default: 'vertical'
         }
     },
+    data () {
+        return {
+            menuData: []
+        }
+    },
     computed: {
         ...mapState('menus', ['menuList'])
     },
     methods: {
         ...mapActions('menus', ['getMenuList']),
-        init () {
-            this.getMenuList()
+        async init () {
+            let menuData = JSON.parse(localStorage.getItem('menuList'))
+            if (!menuData) {
+                menuData = await this.getMenuList()
+                localStorage.setItem('menuList', JSON.stringify(menuData))
+                this.menuData = menuData
+            } else {
+                this.menuData = menuData
+            }
         },
         handleSelect (val) {
+            if (val === this.$route.path) return
             this.$router.push({
                 path: val
             })

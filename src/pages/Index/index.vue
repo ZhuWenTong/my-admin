@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
     data () {
         return {
@@ -18,6 +18,9 @@ export default {
         topMenu: () => import('@/components/layout/topMenu/index'),
         leftMenu: () => import('@/components/layout/leftMenu/index')
     },
+    methods: {
+        ...mapMutations('layout', ['changeLayout'])
+    },
     mounted () {
         let theme = JSON.parse(localStorage.getItem('theme')) || {}
         let layout = JSON.parse(localStorage.getItem('layout')) || {}
@@ -26,7 +29,9 @@ export default {
     },
     watch: {
         layoutData (data) {
-            this.currentLayout = data.value
+            if (data.value) {
+                this.currentLayout = data.value
+            }
         }
     }
 }

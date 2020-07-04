@@ -20,7 +20,7 @@ const actions = {
             setTimeout(() => {
                 commit('setMenuList', menuData)
                 commit('setMenuLoading', false)
-                resolve()
+                resolve(menuData)
             }, 1000)
         })
     }

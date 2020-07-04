@@ -1,0 +1,13 @@
+@mixin border ($top: 100%, $bgColor: #e6e6e6) {
+    position: relative;
+    &::after {
+        content: '';
+        width: 200%;
+        height: 1px;
+        background: $bgColor;
+        position: absolute;
+        top: $top;
+        left: -50%;
+        transform: scale(0.5);
+    }
+}

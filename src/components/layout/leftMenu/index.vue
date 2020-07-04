@@ -6,7 +6,7 @@
             </div>
         </div>
         <el-row>
-            <el-col :span="3">
+            <el-col :span="3" class="left-menu">
                 <myMenu />
             </el-col>
             <el-col :span="21">
@@ -30,12 +30,19 @@ export default {
     .header {
         height: 60px;
         position: relative;
+        border: 1px solid #e6e6e6;
         .header-right {
             padding: 0 20px;
             height: 60px;
             position: absolute;
             right: 0;
             top: 0;
+        }
+    }
+    .left-menu {
+        height: calc(100vh - 60px);
+        .el-menu {
+            height: 100%;
         }
     }
 }
