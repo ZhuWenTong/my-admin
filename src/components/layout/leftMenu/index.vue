@@ -31,6 +31,7 @@ export default {
         height: 60px;
         position: relative;
         border: 1px solid #e6e6e6;
+        box-sizing: border-box;
         .header-right {
             padding: 0 20px;
             height: 60px;
