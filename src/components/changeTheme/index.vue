@@ -93,10 +93,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-.change-theme {
-    .fa-diamond {
-        color: #909399;
-    }
-}
-</style>

@@ -1,6 +1,13 @@
 @import './index.css';
+$--color-primary: #FF40F5;
 .custom-purple {
-    #nprogress .bar {
-        background: #FF40F5;
+    #nprogress {
+        .bar {
+            background: $--color-primary;
+        }
+        .spinner-icon {
+            border-top-color: $--color-primary;
+            border-left-color: $--color-primary;
+        }
     }
 }

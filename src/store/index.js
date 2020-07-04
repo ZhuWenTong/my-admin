@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 import menus from './menus/index'
 import theme from './theme/index'
+import layout from './layout/index'
 
 export default new Vuex.Store({
 	state: {
@@ -15,6 +16,7 @@ export default new Vuex.Store({
 	},
 	modules: {
 		menus,
-		theme
+		theme,
+		layout
 	}
 })
