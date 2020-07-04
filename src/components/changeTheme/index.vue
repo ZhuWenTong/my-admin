@@ -5,15 +5,26 @@
         v-if="visible"
         :visible.sync="visible"
         close-on-click-modal
-        width="50%"
+        width="500px"
         @close="close"
         class="change-theme">
-        <el-radio-group v-model="currentTheme" @change="changeTheme">
-            <el-radio v-for="item in themeOptions" :key="item.value" :label="item.value">{{item.label}}</el-radio>
-        </el-radio-group>
-        <template slot="footer">
-            <el-button size="small" type="primary">确定</el-button>
-        </template>
+        <el-table :data="themeData" border :show-header="false">
+            <el-table-column prop="name">
+                <template slot-scope="props">
+                    <span :style="{color: props.row.color}">{{props.row.name}}</span>
+                </template>
+            </el-table-column>
+            <el-table-column width="150" align="center">
+                <template slot-scope="props">
+                    <el-button @click="changeTheme(props.row)"
+                        :type="props.row.value === currentTheme.value ? 'success': ''"
+                        :icon="props.row.value === currentTheme.value ? 'el-icon-check': ''"
+                        round>
+                        {{props.row.value === currentTheme.value ? '已激活' : '使用'}}
+                    </el-button>
+                </template>
+            </el-table-column>
+        </el-table>
     </el-dialog>
 </template>
 <script>
@@ -26,16 +37,27 @@ export default {
     data () {
         return {
             visible: false,
-            currentTheme: 'default',
-            themeOptions: [{
-                label: 'ElementUI',
-                value: 'default'
+            currentTheme: {
+                name: 'ElementUI',
+                value: 'default',
+                color: '#409EFF'
+            },
+            themeData: [{
+                name: 'ElementUI',
+                value: 'default',
+                color: '#409EFF'
             }, {
-                label: '中国红',
-                value: 'china'
+                name: '中国红',
+                value: 'china',
+                color: 'red'
             }, {
-                label: '紫罗兰',
-                value: 'purple'
+                name: '紫罗兰',
+                value: 'purple',
+                color: '#FF40F5'
+            }, {
+                name: 'Success',
+                value: 'success',
+                color: '#67C23A'
             }]
         }
     },
@@ -47,19 +69,20 @@ export default {
         close () {
             this.$emit('update:dialogVisible', false)
         },
-        changeTheme (val) {
-            this.setSystemTheme(val)
-            localStorage.setItem('theme', val)
+        changeTheme (item) {
+            this.currentTheme = item
+            this.setSystemTheme(item)
+            localStorage.setItem('theme', JSON.stringify(item))
         }
     },
     created () {
-        let theme = localStorage.getItem('theme') || ''
+        let theme = JSON.parse(localStorage.getItem('theme')) || {}
         this.currentTheme = theme
         this.setSystemTheme(theme)
     },
     watch: {
         systemTheme (val) {
-            document.body.className = 'custom-' + val
+            document.body.className = `custom-${this.currentTheme.value}`
         },
         dialogVisible: {
             handler (val) {

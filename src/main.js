@@ -6,8 +6,9 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import './assets/themes/china/index.css'
-import './assets/themes/purple/index.css'
+import './assets/themes/china/main.scss'
+import './assets/themes/purple/main.scss'
+import './assets/themes/success/main.scss'
 
 import 'font-awesome/css/font-awesome.min.css'
 

@@ -43,8 +43,8 @@ export default {
         this.init()
     },
     mounted () {
-        let theme = localStorage.getItem('theme') || ''
-        document.body.className = 'custom-' + theme
+        let theme = JSON.parse(localStorage.getItem('theme')) || {}
+        document.body.className = theme.value ? `custom-${theme.value}`: ''
     }
 }
 </script>

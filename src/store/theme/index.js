@@ -1,5 +1,5 @@
 const state = {
-    systemTheme: ''
+    systemTheme: {}
 }
 
 const mutations = {
