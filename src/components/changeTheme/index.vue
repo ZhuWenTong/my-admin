@@ -81,8 +81,8 @@ export default {
         this.setSystemTheme(theme)
     },
     watch: {
-        systemTheme (val) {
-            document.body.className = `custom-${this.currentTheme.value}`
+        systemTheme (data) {
+            document.body.className = `custom-${data.value}`
         },
         dialogVisible: {
             handler (val) {
