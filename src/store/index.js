@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 import menus from './menus/index'
+import theme from './theme/index'
 
 export default new Vuex.Store({
 	state: {
@@ -13,6 +14,7 @@ export default new Vuex.Store({
 	actions: {
 	},
 	modules: {
-		menus
+		menus,
+		theme
 	}
 })
