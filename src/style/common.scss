@@ -11,3 +11,10 @@
         transform: scale(0.5);
     }
 }
+
+@mixin flex($direction: row, $justifyContent: center, $alignItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}

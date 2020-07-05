@@ -1,6 +1,9 @@
 <template>
-    <el-menu :default-active="$route.path" :mode="mode" @select="handleSelect">
-        <el-menu-item :index="item.path" v-for="item in menuData" :key="item.path">{{item.name}}</el-menu-item>
+    <el-menu :default-active="$route.path" :mode="mode" @select="handleSelect" :collapse="collapse">
+        <el-menu-item :index="item.path" v-for="item in menuData" :key="item.path">
+            <i :class="item.icon" style="margin-right: 10px;"></i>
+            <span slot="title">{{item.name}}</span>
+        </el-menu-item>
     </el-menu>
 </template>
 <script>
@@ -10,6 +13,10 @@ export default {
         mode: {
             type: String,
             default: 'vertical'
+        },
+        collapse: {
+            type: Boolean,
+            default: false
         }
     },
     data () {

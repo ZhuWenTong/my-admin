@@ -24,7 +24,7 @@ export default {
     mounted () {
         let theme = JSON.parse(localStorage.getItem('theme')) || {}
         let layout = JSON.parse(localStorage.getItem('layout')) || {}
-        document.body.className = theme.value ? `custom-${theme.value}`: ''
+        document.body.className = theme.value ? `custom-${theme.value}`: 'custom-default'
         this.currentLayout = layout.value || 'topMenu'
     },
     watch: {

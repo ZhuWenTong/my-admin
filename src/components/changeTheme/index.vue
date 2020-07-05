@@ -76,13 +76,15 @@ export default {
         }
     },
     created () {
-        let theme = JSON.parse(localStorage.getItem('theme')) || {}
-        this.currentTheme = theme
-        this.setSystemTheme(theme)
+        let theme = JSON.parse(localStorage.getItem('theme'))
+        if (theme) {
+            this.currentTheme = theme
+            this.setSystemTheme(theme)
+        }
     },
     watch: {
         systemTheme (data) {
-            document.body.className = `custom-${data.value}`
+            document.body.className = data.value ? `custom-${data.value}` : 'custom-default'
         },
         dialogVisible: {
             handler (val) {

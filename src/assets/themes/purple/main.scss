@@ -10,4 +10,9 @@ $--color-primary: #FF40F5;
             border-left-color: $--color-primary;
         }
     }
+    .el-menu--horizontal {
+        & > .el-menu-item.is-active {
+            color: $--color-primary;
+        }
+    }
 }
