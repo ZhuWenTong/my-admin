@@ -1,11 +1,18 @@
 <template>
     <div class="top-menu-layout">
-        <div class="header">
-            <myMenu mode="horizontal" />
-            <div class="header-right">
+        <el-row class="header">
+            <el-col :span="2" class="wrap-logo">
+                <div class="logo">
+                    MY-ADMIN
+                </div>
+            </el-col>
+            <el-col :span="18">
+                <myMenu mode="horizontal" />
+            </el-col>
+            <el-col :span="4" class="wrap-toolbar">
                 <toolBar />
-            </div>
-        </div>
+            </el-col>
+        </el-row>
         <div class="container">
             <router-view />
         </div>
@@ -22,15 +29,21 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../../style/common.scss';
 .top-menu-layout {
     .header {
-        position: relative;
-        .header-right {
-            padding: 0 20px;
-            height: 60px;
-            position: absolute;
-            right: 0;
-            top: 0;
+        .wrap-logo,
+        .wrap-toolbar {
+            height: 61px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .wrap-logo {
+            @include flex;
+            .logo {
+                font-size: 16px;
+                color: #303133;
+                font-family: Arial, Helvetica, sans-serif;
+            }
         }
     }
 }

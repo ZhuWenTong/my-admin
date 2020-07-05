@@ -69,6 +69,7 @@ export default {
             .logo {
                 font-size: 16px;
                 color: #303133;
+                font-family: Arial, Helvetica, sans-serif;
             }
         }
         .header-right {
@@ -83,12 +84,14 @@ export default {
                     cursor: pointer;
                     border: 1px solid transparent;
                     border-radius: 4px;
+                    transition: all .5s cubic-bezier(.645, .045, .355, 1);
                     &:hover {
                         border-color: #EBEEF5;
                     }
                     i {
                         font-size: 20px;
                         color: #909399;
+                        transition: all .5s cubic-bezier(.645, .045, .355, 1);
                     }
                 }
             }

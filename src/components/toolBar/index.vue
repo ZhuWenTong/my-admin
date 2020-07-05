@@ -2,7 +2,7 @@
     <div class="tool-bar">
         <el-tooltip effect="dark" content="更换布局" placement="top">
             <div @click="layoutVisible=true">
-                <i class="fa fa-list" aria-hidden="true"></i>
+                <i class="fa fa-columns" aria-hidden="true"></i>
             </div>
         </el-tooltip>
         <el-tooltip effect="dark" content="更换主题" placement="top">
@@ -45,11 +45,13 @@ export default {
         cursor: pointer;
         border: 1px solid transparent;
         border-radius: 4px;
+        transition: all .5s cubic-bezier(.645, .045, .355, 1);
         &:hover {
             border-color: #EBEEF5;
         }
         i {
             color: #909399;
+            transition: all .5s cubic-bezier(.645, .045, .355, 1);
         }
     }
 }

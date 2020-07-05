@@ -1,0 +1,41 @@
+@mixin common ($primary) {
+    #nprogress {
+        .bar {
+            background: $primary;
+        }
+        .spinner-icon {
+            border-top-color: $primary;
+            border-left-color: $primary;
+        }
+    }
+    .el-menu--horizontal {
+        & > .el-menu-item {
+            &.is-active,
+            &:not(.is-disabled):focus {
+                color: $primary;
+            }
+        }
+    }
+    .tool-bar {
+        div {
+            &:hover {
+                border-color: $primary;
+                i {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .left-menu-layout {
+        .header .header-right .header-content {
+            .toggle {
+                &:hover {
+                    border-color: $primary;
+                    i {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

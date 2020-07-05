@@ -1,17 +1,5 @@
+@import '../common/index.scss';
 $--color-primary: #409EFF;
 .custom-default {
-    #nprogress {
-        .bar {
-            background: $--color-primary;
-        }
-        .spinner-icon {
-            border-top-color: $--color-primary;
-            border-left-color: $--color-primary;
-        }
-    }
-    .el-menu--horizontal {
-        & > .el-menu-item.is-active {
-            color: $--color-primary;
-        }
-    }
+    @include common($--color-primary);
 }
