@@ -58,6 +58,10 @@ export default {
                 name: 'Success',
                 value: 'success',
                 color: '#67C23A'
+            }, {
+                name: '夜间模式',
+                value: 'dark',
+                color: '#304457'
             }]
         }
     },

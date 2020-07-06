@@ -1,4 +1,5 @@
 @mixin common ($primary) {
+    height: 100vh;
     #nprogress {
         .bar {
             background: $primary;

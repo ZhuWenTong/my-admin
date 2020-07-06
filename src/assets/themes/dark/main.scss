@@ -1,0 +1,99 @@
+@import './index.css';
+@import '../common/index.scss';
+$--color-primary: #304457;
+$dark: $--color-primary;
+$white: #ffffff;
+$hover: #4e6e8e;
+.custom-dark {
+    @include common($--color-primary);
+    background: $dark;
+    div, p, i, a, span {
+        color: $white;
+    }
+    .top-menu-layout,
+    .left-menu-layout {
+        .header {
+            .wrap-logo .logo {
+                color: $white;
+            }
+        }
+    }
+    .left-menu-layout {
+        .header {
+            .header-right .header-content {
+                .toggle {
+                    i {
+                        color: $white;
+                    }
+                    &:hover {
+                        border-color: $white;
+                        background-color: $hover;
+                        i {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tool-bar {
+        div {
+            i {
+                color: $white;
+            }
+            &:hover {
+                border-color: $white;
+                background-color: $hover;
+                i {
+                    color: $white;
+                }
+            }
+        }
+    }
+    .el-menu {
+        background: $dark;
+        .el-menu-item {
+            i {
+                color: $white;
+            }
+            &:hover,
+            &:focus {
+                background: $hover;
+            }
+        }
+        &.el-menu--horizontal {
+            & > .el-menu-item:not(.is-disabled) {
+                &:hover,
+                &:focus {
+                    background: $hover;
+                }
+            }
+        }
+    }
+    .el-dialog,
+    .el-table__body td {
+        background: #1d2935;
+    }
+    .el-dialog__title {
+        color: $white;
+    }
+    .el-table .el-table__body {
+        tr {
+            &:hover {
+                td {
+                    background-color: $hover;
+                }
+            }
+        }
+    }
+    .el-button {
+        span {
+            color: #606266;
+        }
+        &.el-button--success {
+            span {
+                color: $white;
+            }
+        }
+    }
+}
