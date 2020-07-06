@@ -57,8 +57,10 @@ $hover: #4e6e8e;
                 color: $white;
             }
             &:hover,
-            &:focus {
+            &:focus,
+            &.is-active {
                 background: $hover;
+                border-color: $hover;
             }
         }
         &.el-menu--horizontal {
