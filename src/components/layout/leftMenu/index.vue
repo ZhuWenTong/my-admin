@@ -79,8 +79,7 @@ export default {
                 .toggle {
                     width: 40px;
                     height: 40px;
-                    text-align: center;
-                    line-height: 40px;
+                    @include flex(row, center, center);
                     cursor: pointer;
                     border: 1px solid transparent;
                     border-radius: 4px;

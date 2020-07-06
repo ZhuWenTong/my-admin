@@ -51,6 +51,7 @@ export default {
         }
         i {
             color: #909399;
+            font-size: 14px;
             transition: all .5s cubic-bezier(.645, .045, .355, 1);
         }
     }
