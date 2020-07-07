@@ -72,19 +72,41 @@ $hover: #4e6e8e;
             }
         }
     }
-    .el-dialog,
-    .el-table__body td {
+    .el-dialog {
         background: #1d2935;
     }
     .el-dialog__title {
         color: $white;
     }
-    .el-table .el-table__body {
-        tr {
-            &:hover {
-                td {
-                    background-color: $hover;
+    .el-table {
+        .el-table__body {
+            tr {
+                &:hover {
+                    td {
+                        background-color: $hover;
+                    }
                 }
+            }
+            td {
+                background: #1d2935;
+                border-right: 1px solid #303133;
+                border-bottom: 1px solid #303133;
+            }
+        }
+        th {
+            background: #1d2935;
+            &.is-leaf {
+                border-right: 1px solid #303133;
+                border-bottom: 1px solid #303133;
+            }
+        }
+        &::before {
+            background: #303133;
+        }
+        &.el-table--border {
+            border: 1px solid #303133;
+            &::after {
+                background: #303133;
             }
         }
     }
