@@ -6,6 +6,10 @@ const data = [{
     name: 'Example',
     path: '/index/example',
     icon: 'fa fa-th-list'
+}, {
+    name: 'About',
+    path: '/index/about',
+    icon: 'fa fa-telegram'
 }]
 
 export default data
