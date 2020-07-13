@@ -17,7 +17,7 @@ const routes = [{
 	...homeRoute
 }, {
 	path: '*',
-	redirect: '/index/home'
+	redirect: '/'
 }]
 
 const router = new VueRouter({
@@ -25,8 +25,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    NProgress.start()
-    next()
+	NProgress.start()
+	next()
 })
 router.afterEach(() => {
     NProgress.done()
