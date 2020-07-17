@@ -1,5 +1,10 @@
 <template>
     <div class="tool-bar">
+        <el-tooltip effect="dark" :content="isFull ? '退出全屏' : '全屏'" placement="top">
+            <div @click="handleFullScreen">
+                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+            </div>
+        </el-tooltip>
         <el-tooltip effect="dark" content="更换布局" placement="top">
             <div @click="layoutVisible=true">
                 <i class="fa fa-columns" aria-hidden="true"></i>
@@ -15,18 +20,30 @@
     </div>
 </template>
 <script>
+import screenfull from 'screenfull'
 import changeTheme from '../changeTheme/index'
 import changeLayout from '../changeLayout/index'
 export default {
     data () {
         return {
             themeVisible: false,
-            layoutVisible: false
+            layoutVisible: false,
+            isFull: false
         }
     },
     components: {
         changeTheme,
         changeLayout
+    },
+    methods: {
+        handleFullScreen () {
+            if (!screenfull.isEnabled) {
+                this.$message('您的浏览器不支持全屏')
+                return
+            }
+            screenfull.toggle()
+            this.isFull = !this.isFull
+        }
     }
 }
 </script>
