@@ -17,10 +17,10 @@
             <el-table-column width="150" align="center">
                 <template slot-scope="props">
                     <el-button @click="changeTheme(props.row)"
-                        :type="props.row.value === currentTheme.value ? 'success': ''"
-                        :icon="props.row.value === currentTheme.value ? 'el-icon-check': ''"
+                        :type="props.row.value === systemTheme.value ? 'success': ''"
+                        :icon="props.row.value === systemTheme.value ? 'el-icon-check': ''"
                         round>
-                        {{props.row.value === currentTheme.value ? '已激活' : '使用'}}
+                        {{props.row.value === systemTheme.value ? '已激活' : '使用'}}
                     </el-button>
                 </template>
             </el-table-column>
@@ -37,11 +37,6 @@ export default {
     data () {
         return {
             visible: false,
-            currentTheme: {
-                name: 'ElementUI',
-                value: 'default',
-                color: '#409EFF'
-            },
             themeData: [{
                 name: 'ElementUI',
                 value: 'default',
@@ -74,22 +69,10 @@ export default {
             this.$emit('update:dialogVisible', false)
         },
         changeTheme (item) {
-            this.currentTheme = item
             this.setSystemTheme(item)
-            localStorage.setItem('theme', JSON.stringify(item))
-        }
-    },
-    created () {
-        let theme = JSON.parse(localStorage.getItem('theme'))
-        if (theme) {
-            this.currentTheme = theme
-            this.setSystemTheme(theme)
         }
     },
     watch: {
-        systemTheme (data) {
-            document.body.className = data.value ? `custom-${data.value}` : 'custom-default'
-        },
         dialogVisible: {
             handler (val) {
                 this.visible = val

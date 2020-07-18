@@ -15,6 +15,11 @@
                 <i class="fa fa-diamond" aria-hidden="true"></i>
             </div>
         </el-tooltip>
+        <el-tooltip effect="dark" content="注销" placement="top">
+            <div @click="logout">
+                <i class="el-icon-switch-button"></i>
+            </div>
+        </el-tooltip>
         <changeTheme :dialog-visible.sync="themeVisible" />
         <changeLayout :dialog-visible.sync="layoutVisible" />
     </div>
@@ -43,6 +48,25 @@ export default {
             }
             screenfull.toggle()
             this.isFull = !this.isFull
+        },
+        logout () {
+            this.$confirm('注销登录, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                this.$message({
+                    type: 'success',
+                    message: '注销成功!'
+                })
+                document.body.className = 'custom-default'
+                this.$router.replace('/')
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消'
+                })
+            })
         }
     }
 }

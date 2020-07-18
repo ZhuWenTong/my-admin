@@ -5,6 +5,7 @@ const state = {
 const mutations = {
     changeLayout (state, data) {
         state.layoutData = data
+        localStorage.setItem('layout', JSON.stringify(data))
     }
 }
 

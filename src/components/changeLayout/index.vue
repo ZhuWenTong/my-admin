@@ -13,10 +13,10 @@
             <el-table-column width="150" align="center">
                 <template slot-scope="props">
                     <el-button @click="clickBtn(props.row)"
-                        :type="props.row.value === currentLayout.value ? 'success': ''"
-                        :icon="props.row.value === currentLayout.value ? 'el-icon-check': ''"
+                        :type="props.row.value === layoutData.value ? 'success': ''"
+                        :icon="props.row.value === layoutData.value ? 'el-icon-check': ''"
                         round>
-                        {{props.row.value === currentLayout.value ? '已激活' : '使用'}}
+                        {{props.row.value === layoutData.value ? '已激活' : '使用'}}
                     </el-button>
                 </template>
             </el-table-column>
@@ -33,10 +33,6 @@ export default {
     data () {
         return {
             visible: false,
-            currentLayout: {
-                name: '上下布局',
-                value: 'topMenu',
-            },
             layoutList: [{
                 name: '上下布局',
                 value: 'topMenu'
@@ -55,19 +51,12 @@ export default {
             this.$emit('update:dialogVisible', false)
         },
         clickBtn (item) {
-            this.currentLayout = item
             this.changeLayout(item)
-            localStorage.setItem('layout', JSON.stringify(item))
         }
     },
     created () {
-        let defaultMenu = {
-            name: '上下布局',
-            value: 'topMenu'
-        }
-        let layout = JSON.parse(localStorage.getItem('layout')) || defaultMenu
-        this.currentLayout = layout
-        this.changeLayout(this.currentLayout)
+        let layout = JSON.parse(localStorage.getItem('layout'))
+        this.changeLayout(layout)
     },
     watch: {
         dialogVisible: {
