@@ -6,5 +6,6 @@ import '../assets/themes/purple/main.scss'
 import '../assets/themes/success/main.scss'
 import '../assets/themes/dark/main.scss'
 import 'font-awesome/css/font-awesome.min.css'
+import '../assets/iconfont/iconfont.css'
 
 export default {}

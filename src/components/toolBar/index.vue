@@ -7,7 +7,7 @@
         </el-tooltip>
         <el-tooltip effect="dark" content="更换布局" placement="top">
             <div @click="layoutVisible=true">
-                <i class="fa fa-columns" aria-hidden="true"></i>
+                <i class="iconfont iconlayout" aria-hidden="true"></i>
             </div>
         </el-tooltip>
         <el-tooltip effect="dark" content="更换主题" placement="top">
