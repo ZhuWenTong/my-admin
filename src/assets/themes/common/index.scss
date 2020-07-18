@@ -1,5 +1,9 @@
 @mixin common ($primary, $secondPrimary, $thirdPrimary, $fourthPrimary) {
     height: 100vh;
+    ::selection {
+        background: $--color-primary;
+        color: #ffffff;
+    }
     #nprogress {
         .bar {
             background: $primary;
