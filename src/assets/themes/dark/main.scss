@@ -1,11 +1,14 @@
 @import './index.css';
 @import '../common/index.scss';
 $--color-primary: #304457;
+$--second-primary: #4E6C89;
+$--third-primary: #75A0C9;
+$--fourth-primary: #9FCBF5;
 $dark: $--color-primary;
 $white: #ffffff;
-$hover: #4e6e8e;
+$hover: $--second-primary;
 .custom-dark {
-    @include common($--color-primary);
+    @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
     background: $dark;
     div, p, i, a, span {
         color: $white;
@@ -117,6 +120,20 @@ $hover: #4e6e8e;
         &.el-button--success {
             span {
                 color: $white;
+            }
+        }
+    }
+    .el-card {
+        background-color: $--second-primary;
+    }
+    .wrap-grow .wrap-node .node-info {
+        .tit p::before {
+            border-bottom-color: $--color-primary;
+        }
+        &.active,
+        &:hover {
+            .name {
+                color: #C0C4CC;
             }
         }
     }

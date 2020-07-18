@@ -1,4 +1,4 @@
-@mixin common ($primary) {
+@mixin common ($primary, $secondPrimary, $thirdPrimary, $fourthPrimary) {
     height: 100vh;
     #nprogress {
         .bar {
@@ -34,6 +34,55 @@
                     border-color: $primary;
                     i {
                         color: $primary;
+                    }
+                }
+            }
+        }
+    }
+    .wrap-grow {
+        .wrap-node {
+            .node-info {
+                &:hover,
+                &.active {
+                    &::after {
+                        background: $secondPrimary;
+                    }
+                    .tit {
+                        &::before {
+                            background: $primary;
+                        }
+                        &::after {
+                            background: $secondPrimary;
+                        }
+                        p {
+                            border-color: $secondPrimary;
+                            span {
+                                background-color: $secondPrimary;
+                            }
+                            &::after {
+                                border-bottom-color: $secondPrimary;
+                            }
+                        }
+                    }
+                }
+                &::after {
+                    background: $fourthPrimary;
+                }
+                .tit {
+                    &::after {
+                        background: $thirdPrimary;
+                    }
+                    &::before {
+                        background: $secondPrimary;
+                    }
+                    p {
+                        border-color: $thirdPrimary;
+                        span {
+                            background: $thirdPrimary;
+                        }
+                        &::after {
+                            border-bottom-color: $thirdPrimary;
+                        }
                     }
                 }
             }

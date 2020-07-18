@@ -1,6 +1,9 @@
 @import './index.css';
 @import '../common/index.scss';
 $--color-primary: #67C23A;
+$--second-primary: #8BC56E;
+$--third-primary: #A8DC8F;
+$--fourth-primary: #C0F4A7;
 .custom-success {
-    @include common($--color-primary);
+    @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
 }

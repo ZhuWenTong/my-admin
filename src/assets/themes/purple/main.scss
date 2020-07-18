@@ -1,6 +1,9 @@
 @import './index.css';
 @import '../common/index.scss';
 $--color-primary: #FF40F5;
+$--second-primary: #FE6BF6;
+$--third-primary: #FC9CF7;
+$--fourth-primary: #FFC1FC;
 .custom-purple {
-    @include common($--color-primary);
+    @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
 }

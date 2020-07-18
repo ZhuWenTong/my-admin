@@ -1,6 +1,9 @@
 @import './index.css';
 @import '../common/index.scss';
 $--color-primary: red;
+$--second-primary: #F56C6C;
+$--third-primary: #FDE2E2;
+$--fourth-primary: #FEF0F0;
 .custom-china {
-    @include common($--color-primary);
+    @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
 }

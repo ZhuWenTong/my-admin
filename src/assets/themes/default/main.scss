@@ -1,5 +1,8 @@
 @import '../common/index.scss';
 $--color-primary: #409EFF;
+$--second-primary: #79bbff;
+$--third-primary: #b3d8ff;
+$--fourth-primary: #c6e2ff;
 .custom-default {
-    @include common($--color-primary);
+    @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
 }
