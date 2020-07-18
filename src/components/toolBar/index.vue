@@ -60,6 +60,7 @@ export default {
                     message: '注销成功!'
                 })
                 document.body.className = 'custom-default'
+                localStorage.clear()
                 this.$router.replace('/')
             }).catch(() => {
                 this.$message({
