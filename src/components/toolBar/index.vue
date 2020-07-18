@@ -2,7 +2,7 @@
     <div class="tool-bar">
         <el-tooltip effect="dark" :content="isFull ? '退出全屏' : '全屏'" placement="top">
             <div @click="handleFullScreen">
-                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                <i class="fa" :class="isFull ? 'fa-compress' : 'fa-arrows-alt'" aria-hidden="true"></i>
             </div>
         </el-tooltip>
         <el-tooltip effect="dark" content="更换布局" placement="top">
