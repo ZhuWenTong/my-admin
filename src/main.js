@@ -4,22 +4,13 @@ import router from './router'
 import store from './store'
 
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-
-import './style/reset.css'
-
-import './assets/themes/default/main.scss'
-import './assets/themes/china/main.scss'
-import './assets/themes/purple/main.scss'
-import './assets/themes/success/main.scss'
-import './assets/themes/dark/main.scss'
-
-import 'font-awesome/css/font-awesome.min.css'
 
 import directives from './utils/directives'
+import styles from './utils/style'
 
 Vue.use(ElementUI)
 Vue.use(directives)
+Vue.use(styles)
 
 Vue.config.productionTip = false
 
