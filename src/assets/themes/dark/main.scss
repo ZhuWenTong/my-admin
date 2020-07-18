@@ -1,12 +1,12 @@
 @import './index.css';
 @import '../common/index.scss';
 $--color-primary: #304457;
-$--second-primary: #4E6C89;
-$--third-primary: #75A0C9;
-$--fourth-primary: #9FCBF5;
+$--second-primary: #75A0C9;
+$--third-primary: #4E6C89;
+$--fourth-primary: #4E6C89;
 $dark: $--color-primary;
 $white: #ffffff;
-$hover: $--second-primary;
+$hover: #4E6C89;
 .custom-dark {
     @include common($--color-primary, $--second-primary, $--third-primary, $--fourth-primary);
     background: $dark;
@@ -124,7 +124,7 @@ $hover: $--second-primary;
         }
     }
     .el-card {
-        background-color: $--second-primary;
+        background-color: $--third-primary;
     }
     .wrap-grow .wrap-node .node-info {
         .tit p::before {
