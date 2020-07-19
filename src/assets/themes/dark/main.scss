@@ -130,6 +130,10 @@ $hover: #4E6C89;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
         }
     }
+    .el-message-box {
+        background-color: $--third-primary;
+        border-color: $--third-primary;
+    }
     .wrap-grow .wrap-node .node-info {
         .tit p::before {
             border-bottom-color: $--color-primary;
