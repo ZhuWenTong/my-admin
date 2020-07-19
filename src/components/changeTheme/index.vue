@@ -7,7 +7,11 @@
         close-on-click-modal
         width="500px"
         @close="close"
-        class="change-theme">
+        class="change-theme"
+        v-loading="systemThemeLoading"
+        element-loading-text="编译主题中..."
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0.2)">
         <el-table :data="themeData" border :show-header="false">
             <el-table-column prop="name">
                 <template slot-scope="props">
@@ -28,7 +32,7 @@
     </el-dialog>
 </template>
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
     name: 'changeTheme',
     props: {
@@ -61,15 +65,16 @@ export default {
         }
     },
     computed: {
-        ...mapState('theme', ['systemTheme'])
+        ...mapState('theme', ['systemTheme', 'systemThemeLoading'])
     },
     methods: {
-        ...mapMutations('theme', ['setSystemTheme']),
+        ...mapActions('theme', ['compileSysTheme']),
         close () {
             this.$emit('update:dialogVisible', false)
         },
-        changeTheme (item) {
-            this.setSystemTheme(item)
+        async changeTheme (item) {
+            await this.compileSysTheme(item)
+            this.close()
         }
     },
     watch: {
