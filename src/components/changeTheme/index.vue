@@ -75,6 +75,10 @@ export default {
         async changeTheme (item) {
             await this.compileSysTheme(item)
             this.close()
+            this.$message({
+                message: '主题切换成功',
+                type: 'success'
+            })
         }
     },
     watch: {

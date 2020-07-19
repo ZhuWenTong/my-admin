@@ -93,6 +93,7 @@ export default {
 						Cookies.set('username', this.loginForm.username)
 						Cookies.set('password', window.btoa(this.loginForm.password))
 						Cookies.set('isPsd', 1)
+						localStorage.setItem('token', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
                     }
                     this.loading = false
                     this.$router.replace('/index/home')

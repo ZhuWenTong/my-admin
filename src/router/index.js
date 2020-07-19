@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import { Message } from 'element-ui'
 
 import homeRoute from './home/index'
 
@@ -25,8 +26,20 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+	const token = localStorage.getItem('token')
 	NProgress.start()
-	next()
+	if (!token) {
+		if (to.name !== 'Login') {
+			Message.error('token失效，请重新登录')
+			next({
+				name: 'Login'
+			})
+		} else {
+			next()
+		}
+	} else {
+		next()
+	}
 })
 router.afterEach(() => {
     NProgress.done()
