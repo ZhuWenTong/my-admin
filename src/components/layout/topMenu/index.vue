@@ -14,7 +14,9 @@
             </el-col>
         </el-row>
         <div class="container">
-            <router-view />
+            <transition name="routerAnimate" mode="out-in">
+                <router-view />
+            </transition>
         </div>
     </div>
 </template>
@@ -45,6 +47,12 @@ export default {
                 font-family: Arial, Helvetica, sans-serif;
             }
         }
+    }
+    .routerAnimate-enter-active {
+        animation: fadeInDown .4s;
+    }
+    .routerAnimate-leave-active {
+        animation: fadeOutDown .3s;
     }
 }
 </style>

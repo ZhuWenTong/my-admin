@@ -26,7 +26,9 @@
                 <myMenu :collapse="!isExpand" />
             </el-col>
             <el-col :span="rightCol" class="wrap-container">
-                <router-view />
+                <transition name="routerAnimate" mode="out-in">
+                    <router-view />
+                </transition>
             </el-col>
         </el-row>
     </div>
@@ -108,6 +110,12 @@ export default {
     .left-menu,
     .wrap-container {
         transition: all .5s cubic-bezier(.645, .045, .355, 1);
+    }
+    .routerAnimate-enter-active {
+        animation: fadeInDown .4s;
+    }
+    .routerAnimate-leave-active {
+        animation: fadeOutDown .3s;
     }
 }
 </style>

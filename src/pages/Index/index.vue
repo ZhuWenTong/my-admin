@@ -1,6 +1,8 @@
 <template>
     <div class="admin-index">
-        <component :is="layoutData.value" />
+        <transition name="pageAnimate" mode="out-in">
+            <component :is="layoutData.value" />
+        </transition>
     </div>
 </template>
 <script>
@@ -38,3 +40,11 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+.pageAnimate-enter-active {
+    animation: fadeInDown .4s;
+}
+.pageAnimate-leave-active {
+    animation: fadeOutDown .3s;
+}
+</style>
