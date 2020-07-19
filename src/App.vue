@@ -1,6 +1,8 @@
 <template>
 	<div id="app" v-loading="menuLoading">
-		<router-view />
+		<transition name="pageAnimate" mode="out-in">
+			<router-view />
+		</transition>
 	</div>
 </template>
 <script>
