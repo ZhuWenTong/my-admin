@@ -42,9 +42,9 @@ export default {
 </script>
 <style lang="scss">
 .pageAnimate-enter-active {
-    animation: fadeInDown .4s;
+    animation: fadeIn .4s;
 }
 .pageAnimate-leave-active {
-    animation: fadeOutDown .3s;
+    animation: fadeOut .3s;
 }
 </style>

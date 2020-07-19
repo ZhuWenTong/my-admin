@@ -49,10 +49,10 @@ export default {
         }
     }
     .routerAnimate-enter-active {
-        animation: fadeInDown .4s;
+        animation: fadeInDown .5s;
     }
     .routerAnimate-leave-active {
-        animation: fadeOutDown .3s;
+        animation: fadeOutDown .5s;
     }
 }
 </style>
