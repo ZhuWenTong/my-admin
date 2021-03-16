@@ -37,6 +37,7 @@
     "querystring": "^0.2.0",
     "sass-loader": "^8.0.2",
     "screenfull": "^5.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "wangeditor": "^4.5.0"
   }
 }
