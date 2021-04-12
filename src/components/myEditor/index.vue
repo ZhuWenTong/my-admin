@@ -78,7 +78,10 @@ export default {
             this.editor.config.onchange = html => {
                 this.$emit('change', html)
             }
-            this.$nextTick(() => this.editor.create())
+            this.$nextTick(() => {
+                this.editor.create()
+                this.editor.txt.html(this.value)    
+            })
         },
         handleUploadImg () {
             const _this = this
@@ -150,22 +153,13 @@ export default {
                     }
                 })
             }
+        },
+        clear () {
+            this.editor.txt.html('')
         }
     },
     mounted () {
         this.init()
-        if (this.value) {
-            this.$nextTick(() => this.editor.txt.html(this.value))
-        }
-    },
-    watch: {
-        value: {
-            handler (val) {
-                if (this.editor) {
-                    this.editor.txt.html(val)
-                }
-            }
-        }
     }
 }
 </script>
